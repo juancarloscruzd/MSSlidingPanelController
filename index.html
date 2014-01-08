@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Msslidingpanelcontroller by SebastienMichoy</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Msslidingpanelcontroller</h1>
+        <h2>Integrate easily a sliding panel controller mechanism in your project!</h2>
+        <a href="https://github.com/SebastienMichoy/MSSlidingPanelController" class="button"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a name="msslidingpanelcontroller" class="anchor" href="#msslidingpanelcontroller"><span class="octicon octicon-link"></span></a>MSSlidingPanelController</h1>
+
+<p>The <code>MSSlidingPanelController</code> is a library which allows to <strong>easily integrate</strong> in your project a <strong>sliding panel controller</strong> mechanism.</p>
+
+<p align="center">
+<img src="http://sebastienmichoy.github.io/MSSlidingPanelController/images/MSSlidingPanelController.png"></p>
+
+<h2>
+<a name="features" class="anchor" href="#features"><span class="octicon octicon-link"></span></a>Features</h2>
+
+<h3>
+<a name="msslidingpanelcontroller-1" class="anchor" href="#msslidingpanelcontroller-1"><span class="octicon octicon-link"></span></a>MSSlidingPanelController</h3>
+
+<p>Either for the left and right panel, it is possible to set:</p>
+
+<ul>
+<li>the width,</li>
+<li>the status bar color,</li>
+<li>the status bar color transition,</li>
+<li>the opening gestures,</li>
+<li>the closing gestures,</li>
+<li>the interaction with the center view.</li>
+</ul><p>The status bar color transition can be:</p>
+
+<ul>
+<li>abrupt,</li>
+<li>smoothly.</li>
+</ul><p>The panels can be opened by:</p>
+
+<ul>
+<li>dragging the navigation bar of the center view (if there is one),</li>
+<li>dragging the content of the center view.</li>
+</ul><p>The panels can be closed by:</p>
+
+<ul>
+<li>dragging the navigation bar of the center view (if there is one),</li>
+<li>dragging the content of the center view,</li>
+<li>tapping the navigation bar of the center view (if there is one),</li>
+<li>tapping the content of the center view.</li>
+</ul><p>The interactions with the center view can be:</p>
+
+<ul>
+<li>nonexistent,</li>
+<li>only with the navigation bar (if there is one),</li>
+<li>with the entire center view.</li>
+</ul><h3>
+<a name="msslidingpanelcontrollerdelegate" class="anchor" href="#msslidingpanelcontrollerdelegate"><span class="octicon octicon-link"></span></a>MSSlidingPanelControllerDelegate</h3>
+
+<p>The protocol <code>MSSlidingPanelControllerDelegate</code> allows to know when:</p>
+
+<ul>
+<li>a panel begins to bring out,</li>
+<li>a panel has been closed,</li>
+<li>a panel has been opened.</li>
+</ul><h3>
+<a name="uiviewcontroller-msslidingpanel" class="anchor" href="#uiviewcontroller-msslidingpanel"><span class="octicon octicon-link"></span></a>UIViewController (MSSlidingPanel)</h3>
+
+<p>This extension allows view controllers to easily get a pointer on a sliding panel controller if this one is a parent.</p>
+
+<h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>There are two ways to use <code>MSSlidingPanelController</code> in your project.</p>
+
+<p>The first one is to manually add these files to your project:</p>
+
+<ul>
+<li>MSSlidingPanelController.h</li>
+<li>MSSlidingPanelController.m</li>
+<li>MSViewControllerSlidingPanel.h (optional)</li>
+<li>MSViewControllerSlidingPanel.m (optional)</li>
+</ul><p>The second way is by using <a href="https://github.com/cocoapods/cocoapods">CocoaPods</a>.</p>
+
+<div class="highlight highlight-Ruby"><pre><span class="n">pod</span> <span class="s1">'MSSlidingPanelController'</span>
+</pre></div>
+
+<h2>
+<a name="documentation" class="anchor" href="#documentation"><span class="octicon octicon-link"></span></a>Documentation</h2>
+
+<p>The documentation of <code>MSSlidingPanelController</code> can be found on <a href="http://cocoadocs.org/docsets/MSSlidingPanelController/1.0.0/">CocoaDoc</a>.</p>
+
+<h2>
+<a name="creating-a-msslidingpanelcontroller" class="anchor" href="#creating-a-msslidingpanelcontroller"><span class="octicon octicon-link"></span></a>Creating a MSSlidingPanelController</h2>
+
+<p>That's very easy to create a <code>MSSlidingPanelController</code>. Only write this few lines <em>et voila</em>!</p>
+
+<div class="highlight highlight-Objective-C"><pre><span class="n">UIViewController</span>            <span class="o">*</span><span class="n">centerViewController</span><span class="p">;</span>
+<span class="n">UIViewController</span>            <span class="o">*</span><span class="n">leftPanelController</span><span class="p">;</span>
+<span class="n">UIViewController</span>            <span class="o">*</span><span class="n">rightPanelController</span><span class="p">;</span>
+<span class="n">MSSlidingPanelController</span>    <span class="o">*</span><span class="n">slidingPanelController</span><span class="p">;</span>
+
+<span class="n">centerViewController</span> <span class="o">=</span> <span class="p">[[</span><span class="n">UIViewController</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
+<span class="n">leftPanelController</span> <span class="o">=</span> <span class="p">[[</span><span class="n">UIViewController</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
+<span class="n">rightPanelController</span> <span class="o">=</span> <span class="p">[[</span><span class="n">UIViewController</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">init</span><span class="p">];</span>
+
+<span class="n">slidingPanelController</span> <span class="o">=</span> <span class="p">[[</span><span class="n">MSSlidingPanelController</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithCenterViewController</span><span class="o">:</span><span class="n">centerViewController</span>
+                                                                    <span class="nl">leftPanelController:</span><span class="n">leftPanelController</span>
+                                                                <span class="nl">andRightPanelController:</span><span class="n">rightPanelController</span><span class="p">];</span>
+</pre></div>
+
+<h2>
+<a name="credit" class="anchor" href="#credit"><span class="octicon octicon-link"></span></a>Credit</h2>
+
+<p>The library and the example are developed and designed by <a href="http://www.linkedin.com/in/sebastienmichoy">Sébastien MICHOY</a>.</p>
+
+<h2>
+<a name="feedback" class="anchor" href="#feedback"><span class="octicon octicon-link"></span></a>Feedback</h2>
+
+<p>If you find a bug, feel free to create Github issues!</p>
+
+<h2>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p><code>MSSlidingPanelController</code> is available under the BSD license. Please see the LICENSE file for more information.</p>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/SebastienMichoy/MSSlidingPanelController/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/SebastienMichoy/MSSlidingPanelController/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/SebastienMichoy/MSSlidingPanelController"></a> is maintained by <a href="https://github.com/SebastienMichoy">SebastienMichoy</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+            <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-39734083-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
